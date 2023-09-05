@@ -15,7 +15,7 @@ public class Ejercicio2 {
             System.out.println("no bisiesto");
         }
         else {
-            if(ano%4 == 0 && ano%100 != 0){
+            if(ano%100 != 0){
                 System.out.println("bisiesto!!!");
             }
             else {

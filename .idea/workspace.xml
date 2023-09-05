@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d68dbcb-6351-4344-866d-9d2201ff4c2e" name="Changes" comment="inicio">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/campusdual/ejercicio2/Ejercicio2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9d68dbcb-6351-4344-866d-9d2201ff4c2e" name="Changes" comment="ejercicio años bisiestos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1693903799692</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ejercicio años bisiestos">
+      <created>1693910525750</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693910525750</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="inicio" />
-    <option name="LAST_COMMIT_MESSAGE" value="inicio" />
+    <MESSAGE value="ejercicio años bisiestos" />
+    <option name="LAST_COMMIT_MESSAGE" value="ejercicio años bisiestos" />
   </component>
 </project>
