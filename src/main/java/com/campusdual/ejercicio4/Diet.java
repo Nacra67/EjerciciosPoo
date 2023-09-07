@@ -32,54 +32,114 @@ public class Diet {
 
     private ArrayList<Food> dietFood;
     private ArrayList<Integer> foodWeight;
+    private Double maxCalories;
+    private Integer maxCarbs;
+    private Integer maxFats;
+    private Integer maxProteins;
+
 
     public Diet() {
         this.dietFood = new ArrayList<Food>();
         this.foodWeight = new ArrayList<Integer>();
     }
-    public void addFood(Food food, Integer weight){
+
+    public Diet(double maxCalories) {
+        this.dietFood = new ArrayList<Food>();
+        this.foodWeight = new ArrayList<Integer>();
+        this.maxCalories = maxCalories;
+    }
+
+    public Diet(Integer maxCarbs, Integer maxFats, Integer maxProteins) {
+        this.dietFood = new ArrayList<Food>();
+        this.foodWeight = new ArrayList<Integer>();
+        this.maxCarbs = maxCarbs;
+        this.maxFats = maxFats;
+        this.maxProteins = maxProteins;
+    }
+
+    public Diet(Integer genre, Integer weight, Integer age, Integer height) {
+        this.dietFood = new ArrayList<Food>();
+        this.foodWeight = new ArrayList<Integer>();
+        Double calories = null;
+        if (genre == 1) {
+            //TMB = 10P + 6,25A – 5E + 5
+            calories = 10 * weight + 6.25 * height - 5 * age + 5;
+        } else {
+            calories = 10 * weight + 6.25 * height - 5 * age - 161;
+        }
+        this.maxCalories = calories;
+    }
+
+    public Double getMaxWeight() {
+        return maxCalories;
+    }
+
+    public Integer getMaxCarbs() {
+        return maxCarbs;
+    }
+
+    public Integer getMaxFats() {
+        return maxFats;
+    }
+
+    public Integer getMaxProteins() {
+        return maxProteins;
+    }
+
+    public ArrayList<Food> getDietFood() {
+        return dietFood;
+    }
+
+    public ArrayList<Integer> getFoodWeight() {
+        return foodWeight;
+    }
+
+
+    public void addFood(Food food, Integer weight) {
         this.dietFood.add(food);
         this.foodWeight.add(weight);
     }
-    public double getCalories(){
+
+    public double getCalories() {
         double totalCalories = 0;
-        for (int i=0 ; i < this.dietFood.size(); i++){
+        for (int i = 0; i < this.dietFood.size(); i++) {
             totalCalories += this.dietFood.get(i).getCalories(this.foodWeight.get(i));
         }
         return totalCalories;
     }
 
-    public double getTotalCarbs(){
-        double totalCarbs =0;
-        for (int i=0 ; i < this.dietFood.size(); i++){
-            totalCarbs += this.dietFood.get(i).getCarbos() * this.foodWeight.get(i)/100;
+    public double getTotalCarbs() {
+        double totalCarbs = 0;
+        for (int i = 0; i < this.dietFood.size(); i++) {
+            totalCarbs += this.dietFood.get(i).getCarbos() * this.foodWeight.get(i) / 100;
         }
 
         return totalCarbs;
     }
 
-    public double getTotalFats(){
-        double totalFats =0;
-        for (int i=0 ; i < this.dietFood.size(); i++){
-            totalFats += this.dietFood.get(i).getFats() * this.foodWeight.get(i)/100;
+    public double getTotalFats() {
+        double totalFats = 0;
+        for (int i = 0; i < this.dietFood.size(); i++) {
+            totalFats += this.dietFood.get(i).getFats() * this.foodWeight.get(i) / 100;
         }
 
         return totalFats;
     }
 
-    public double getTotalProteins(){
-        double totalProteins =0;
-        for (int i=0 ; i < this.dietFood.size(); i++){
-            totalProteins += this.dietFood.get(i).getProteins() * this.foodWeight.get(i)/100;
+    public double getTotalProteins() {
+        double totalProteins = 0;
+        for (int i = 0; i < this.dietFood.size(); i++) {
+            totalProteins += this.dietFood.get(i).getProteins() * this.foodWeight.get(i) / 100;
         }
 
         return totalProteins;
     }
-    public void getFoodWeightList(){
+
+    public void getFoodWeightList() {
         System.out.println("________________");
         System.out.println("___SU DIETA___");
-        for (int i = 0; i < dietFood.size(); i++){
-            System.out.print(dietFood.get(i).getNombre()+"-"+foodWeight.get(i) + "g ");
+        for (int i = 0; i < dietFood.size(); i++) {
+            System.out.print(dietFood.get(i).getNombre() + "-" + foodWeight.get(i) + "g ");
         }
         System.out.println("\n");
         System.out.println("Valores nutricionales:");
@@ -91,5 +151,27 @@ public class Diet {
         System.out.println(getTotalFats());
         System.out.print("Total de calorias:");
         System.out.println(getCalories());
+    }
+
+    public Integer maxLimit(Integer select) {
+        Integer limiteAlcanzado = select;
+        if (maxCalories != null) {
+            System.out.println("tu limite de calorias esta en: " + this.maxCalories + " tu dieta contiene: " + getCalories());
+            if (maxCalories < getCalories()) {
+                System.out.println("Limite alcanzado");
+                limiteAlcanzado = 4;
+            }
+        } else if (maxCarbs != null) {
+            System.out.println("tu limite por nutrientes es ");
+            System.out.println("Maximos permitidos ->Proteinas: " + maxProteins + " | Hidratos: " + maxCarbs + " | Grasas" + maxFats);
+            System.out.println("Cantidades actuales ->Proteinas: " + getTotalProteins() + " | Hidratos: " + getTotalCarbs() + " | Grasas" + getTotalFats());
+            if (maxCarbs<getTotalCarbs() ||maxFats < getTotalFats()||maxProteins<getTotalProteins()) {
+                System.out.println("limite alcanzado");
+                limiteAlcanzado = 4;
+            }
+        } else {
+            System.out.println("Dieta premium sin limites!");
+        }
+        return limiteAlcanzado;
     }
 }

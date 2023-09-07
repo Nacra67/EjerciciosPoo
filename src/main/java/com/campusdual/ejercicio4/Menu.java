@@ -21,11 +21,9 @@ public class Menu {
 
     private Diet myDiet;
     private ArrayList<Food> foodList;
-    private int count;
     public Menu() {
         this.myDiet = new Diet();
         this.foodList = new ArrayList<>();
-        this.count = 0;
     }
     public void cargarAlimentos(){
         Food manzana = new Food("Manzana",5,5,5);
@@ -50,43 +48,54 @@ public class Menu {
         Scanner teclado = new Scanner(System.in);
         return teclado.nextInt();
     }
-    public void continuar(){
+    public int continuar(int select){
         System.out.println("___________________");
         System.out.println("1.Continuar");
         System.out.println("2.Exit");
-        if (selection() == 1){
-            menuPrincpal();
-        }else {
+        int selected = selection();
+        if (selected != 1){
             System.out.println("Pues muerase de hambre!");
+            return 4;
+        }else {
+            return select;
         }
     }
     public void menuPrincpal(){
-        System.out.println("Opciones de Menu");
-        System.out.println("-------------------------");
-        System.out.println("1.Nueva Dieta");
-        System.out.println("2.Informacion dieta actual");
-        System.out.println("3.Añadir alimento a la dieta");
-        System.out.println("4.Cerrar programa");
-        System.out.println("--------------------------");
-        System.out.println("Selecciona una de las opciones");
-        Integer select = selection();
-        switch (select){
-            case 1:
-                newDiet();
-                break;
-            case 2:
-                dietInformation();
-                break;
-            case 3:
-                addNewElement();
-                continuar();
-                break;
-            case 4:
-                System.out.println("Dieta finalizada, ¡esperamos volver a verle pronto!");
-                break;
+        Integer select = 1;
+        while (select !=4) {
+            System.out.println("Opciones de Menu");
+            System.out.println("-------------------------");
+            System.out.println("1.Nueva Dieta");
+            System.out.println("2.Informacion dieta actual");
+            System.out.println("3.Añadir alimento a la dieta");
+            System.out.println("4.Cerrar programa");
+            System.out.println("--------------------------");
+            System.out.println("Selecciona una de las opciones");
+            select = selection();
+            switch (select) {
+                case 1:
+                    newDiet();
+                    select = continuar(select);
+                    break;
+                case 2:
+                    dietInformation();
+                    select = continuar(select);
+                    break;
+                case 3:
+                    addNewElement();
+                    select = myDiet.maxLimit(select);
+                    select = continuar(select);
+                    break;
+                case 4:
+                    System.out.println("Dieta finalizada, ¡esperamos volver a verle pronto!");
+                    break;
+                default:
+                    System.out.println("algo no funciona");
+            }
         }
-        count += 1;
-        System.out.println(count);
+        myDiet.getDietFood();
+        System.out.println("Esperamos que disfrute su dieta!");
+
     }
     public void addNewElement(){
         System.out.println("Añadir alimento:");
@@ -98,11 +107,36 @@ public class Menu {
                 newAlimento();
                 break;
             case 2:
+                alimentoRecomendado();
                 break;
             default:
                 System.out.println("Algo no funciona....");
         }
     }
+    public void alimentoRecomendado(){
+        System.out.println("selecciona tu alimento o cambia la cantidad:");
+        for (int i = 0; i < this.foodList.size(); i++){
+            int position = i + 1;
+            System.out.print(position+"."+this.foodList.get(i).getNombre() + "  ");
+        }
+        Integer eleccion = selection();
+        System.out.println("cuantos gramos ponemos?");
+        Integer peso = selection();
+        boolean contenido = false;
+        for (int i = 0; i < myDiet.getDietFood().size(); i++){
+            if (myDiet.getDietFood().get(i).getNombre() == this.foodList.get(eleccion).getNombre()){
+                myDiet.getFoodWeight().set(i,peso);
+                contenido = true;
+                System.out.println("la cantidad de peso de "+this.foodList.get(eleccion).getNombre()+"  cambiada a" + peso + "g");
+            }
+        }
+        if (!contenido){
+            myDiet.addFood(this.foodList.get(eleccion-1),peso);
+            System.out.println(this.foodList.get(eleccion-1).getNombre() + " alimento añadido");
+        } else {}
+    }
+
+
     public void newAlimento(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre del alimento: ");
@@ -120,17 +154,62 @@ public class Menu {
         this.foodList.add(newAlimento);
         this.myDiet.addFood(newAlimento,weight);
 
-        System.out.println("Sus "+weight+ " de "+nombre+" han sido añadido a la dieta");
+        System.out.println("Sus "+weight+ "g de "+nombre+" han sido añadido a la dieta");
 
     }
+
+
     public void newDiet(){
-        System.out.println("\n\n\nSu nueva dieta a sido creado\n");
-        this.myDiet = new Diet();
-        continuar();
+        System.out.println("Selecciona tu tipo de dieta!");
+        System.out.println("1.Dieta PREMIUM sin limites!!!");
+        System.out.println("2.Dieta con limite de Calorias");
+        System.out.println("3.Dieta por Nutrientes");
+        System.out.println("4.Dieta Basal PERSONALIZADA!!!");
+        Integer tipoDieta = selection();
+        switch (tipoDieta){
+            case 1:
+                myDiet = new Diet();
+                break;
+            case 2:
+                System.out.println("MAXIMO DE CALORIAS!!");
+                System.out.println("Diganos cuantas calorias desea como Maximo: ->");
+                Integer maxCalories = selection();
+                myDiet = new Diet(maxCalories);
+                break;
+            case 3:
+                System.out.println("NUTRIENTES!!");
+                System.out.println("Ingresa el valor para mxProtein:");
+                Integer mxProtein = selection();
+                System.out.println("Ingresa el valor para maxFats:");
+                Integer maxFats = selection();
+                System.out.println("Ingresa el valor para maxCarbs:");
+                Integer maxCarbs = selection();
+                myDiet = new Diet(mxProtein,maxFats,maxCarbs);
+                break;
+            case 4:
+                System.out.println("(>Ò.ó)>-DIETA BASAL PERSONALIZAD-<(ò.Ó<)");
+                System.out.println("Cual es tu genero? 1.Hombre 2.Mujer");
+                Integer genero = selection();
+                while(genero != 1 || genero != 2){
+                    System.out.println("lo sentimos a ocurrido un error");
+                    System.out.println("intentelo otra vez 1.Hombre 2.Mujer");
+                    genero = selection();
+                }
+                System.out.println("Canto pesas? ò.Ó?");
+                Integer peso = selection();
+                System.out.println("E de alto como andas?");
+                Integer alto = selection();
+                System.out.println("Tu edad es lo que mas nos importa!");
+                Integer edad = selection();
+                this.myDiet = new Diet(genero,peso,edad,alto);
+                break;
+            default:
+                System.out.println("Su dieta a fracasado, lo sentimos!");
+        }
+        System.out.println("\nSu nueva dieta a sido creada\n");
     }
     public void dietInformation(){
         this.myDiet.getFoodWeightList();
-        continuar();
     }
 
 }
