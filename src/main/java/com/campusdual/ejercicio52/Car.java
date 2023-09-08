@@ -57,4 +57,28 @@ public class Car {
             e.printStackTrace();
         }
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public String getGarage() {
+        return garage;
+    }
+
+    public Integer getSkill() {
+        return skill;
+    }
+
+    public Double getSpeed() {
+        return speed;
+    }
+
+    public Double getDistance() {
+        return distance;
+    }
 }
