@@ -10,36 +10,47 @@ public class Car {
     private String modelo;
     private String garage;
     private Integer skill;
-    private Double speed;
-    private Double distance;
-    private final Integer MAX_SPEED = 100;
+    private Double speed = 0.0;
+    private Double distance = 0.0;
+    private Integer points = 0;
+    private final Integer MAX_SPEED = 110;
+
+
 
     public Car(String marca, String modelo, String garage, Integer skill) {
         this.marca = marca;
         this.modelo = modelo;
         this.garage = garage;
-        this.speed = 0.0;
         this.skill = skill; //int 3 a 6
-        this.distance = 0.0;
-
+    }
+    public Car(String marca, String modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+        int numero = (int)(Math.random()*10+1);
+        this.garage = "";
+        this.skill = numero; //int 3 a 6 convertir en random
     }
     public  void carInfo(){
-        System.out.println(this.marca +"-"+ this.modelo+" va a "+this.speed+"m/min y lleva " +
-                this.distance+"m recorridos");
+        System.out.println(this.marca + this.modelo+" de "+this.garage+ " va a "+Math.round(this.speed)+"km/h y lleva " +
+                Math.round(this.distance)+"km recorridos");
+    }
+    public  void carPoints(){
+        System.out.println(this.marca +"-"+ this.modelo+" Tiene: "+this.points+" puntos");
     }
     public void runing() {
         Random random = new Random();
         if (this.MAX_SPEED > this.speed) {
-            System.out.println("acelera");
             int extraSpeed = random.nextInt(this.skill);
-            this.speed = ((this.speed + 13 + extraSpeed) * 0.90);
-            this.distance += this.speed;
+            this.speed = ((this.speed + 9 + extraSpeed) * 0.90);
+            this.distance += this.speed/60;
         } else {
-            System.out.println("decelera");
             int extraSpeed = random.nextInt(15-this.skill);
             this.speed -= extraSpeed;
-            this.distance += this.speed;
+            this.distance += this.speed/60;
         }
+    }
+    public void addPoints(Integer points){
+        this.points += points;
     }
 
     public JSONObject jsonAddCar(){
@@ -56,6 +67,13 @@ public class Car {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public void endRace(){
+        setSpeed(0.0);
+        setDistance(0.0);
+    }
+    public void endTournament(){
+        setPoints(0);
     }
 
     public String getMarca() {
@@ -81,4 +99,33 @@ public class Car {
     public Double getDistance() {
         return distance;
     }
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setGarage(String garage) {
+        this.garage = garage;
+    }
+
+    public void setSpeed(Double speed) {
+        this.speed = speed;
+    }
+
+    public void setDistance(Double distance) {
+        this.distance = distance;
+    }
+
+    public Integer getPoints() {
+        return points;
+    }
+
+    public void setPoints(Integer points) {
+        this.points = points;
+    }
+
+
 }
