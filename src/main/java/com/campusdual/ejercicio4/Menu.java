@@ -124,16 +124,16 @@ public class Menu {
         Integer peso = selection();
         boolean contenido = false;
         for (int i = 0; i < myDiet.getDietFood().size(); i++){
-            if (myDiet.getDietFood().get(i).getNombre() == this.foodList.get(eleccion).getNombre()){
+            if (myDiet.getDietFood().get(i).getNombre() == this.foodList.get(eleccion-1).getNombre()){
                 myDiet.getFoodWeight().set(i,peso);
                 contenido = true;
-                System.out.println("la cantidad de peso de "+this.foodList.get(eleccion).getNombre()+"  cambiada a" + peso + "g");
+                System.out.println("la cantidad de peso de "+this.foodList.get(eleccion-1).getNombre()+"  cambiada a" + peso + "g");
             }
         }
         if (!contenido){
             myDiet.addFood(this.foodList.get(eleccion-1),peso);
             System.out.println(this.foodList.get(eleccion-1).getNombre() + " alimento añadido");
-        } else {}
+        }
     }
 
 
@@ -141,20 +141,38 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre del alimento: ");
         String nombre = scanner.nextLine();
-
-        System.out.println("Ingresa la cantidad del alimento: ");
-        int weight = scanner.nextInt();
-
         Random random = new Random();
         int carbos = random.nextInt(31);
         int fats = random.nextInt(31);
         int proteins = random.nextInt(31);
 
         Food newAlimento= new Food(nombre, carbos, fats, proteins);
-        this.foodList.add(newAlimento);
-        this.myDiet.addFood(newAlimento,weight);
+        System.out.println("cuantos gramos ponemos?");
+        Integer peso = selection();
+        boolean contenido = false;
+        boolean contenido2 = false;
+        for (int i = 0; i < myDiet.getDietFood().size(); i++){
+            if (myDiet.getDietFood().get(i).getNombre() == newAlimento.getNombre()){
+                myDiet.getFoodWeight().set(i,peso);
+                contenido = true;
+                System.out.println("la cantidad de peso de "+newAlimento.getNombre()+"  cambiada a" + peso + "g");
+            }
+        }
+        for (int i = 0; i < foodList.size(); i++){
+            if (foodList.get(i).getNombre() == newAlimento.getNombre()){
+                contenido2 = true;
+                System.out.println("esta comida ya esta incluida en nuestras recomendaciones");
+            }
+        }
+        if (!contenido){
+            myDiet.addFood(newAlimento,peso);
+            System.out.println(newAlimento.getNombre() + " alimento añadido a dieta");
+        }
+        if (!contenido2){
+            foodList.add(newAlimento);
+            System.out.println(newAlimento.getNombre() + " alimento añadido a recomendaciones");
+        }
 
-        System.out.println("Sus "+weight+ "g de "+nombre+" han sido añadido a la dieta");
 
     }
 

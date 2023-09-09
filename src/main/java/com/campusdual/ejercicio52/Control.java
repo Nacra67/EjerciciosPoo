@@ -12,6 +12,8 @@ public class Control {
 //        }
 //        System.out.println(uno.jsonAddCar());
 //        JsonImports.exportJSONToFile(uno.jsonAddCar());
+        //////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////
         ArrayList<Car> carList = new ArrayList<Car>();
 
         for (Integer i =0; i<6;i++){
@@ -28,6 +30,8 @@ public class Control {
         StandarRace laCarrera = new StandarRace("Coruña Summer",120);
         laCarrera.addPlayers(listaGarages,garage.getCarList());
         laCarrera.startRace();
+        //////////////////////////////////////////////////////////////////////////
+        /////////////////////////////////////////////////////////////////////////
 
     }
 }

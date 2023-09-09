@@ -158,6 +158,7 @@ public class Diet {
         if (maxCalories != null) {
             System.out.println("tu limite de calorias esta en: " + this.maxCalories + " tu dieta contiene: " + getCalories());
             if (maxCalories < getCalories()) {
+                getFoodWeightList();
                 System.out.println("Limite alcanzado");
                 limiteAlcanzado = 4;
             }
@@ -166,7 +167,9 @@ public class Diet {
             System.out.println("Maximos permitidos ->Proteinas: " + maxProteins + " | Hidratos: " + maxCarbs + " | Grasas" + maxFats);
             System.out.println("Cantidades actuales ->Proteinas: " + getTotalProteins() + " | Hidratos: " + getTotalCarbs() + " | Grasas" + getTotalFats());
             if (maxCarbs<getTotalCarbs() ||maxFats < getTotalFats()||maxProteins<getTotalProteins()) {
+                getFoodWeightList();
                 System.out.println("limite alcanzado");
+
                 limiteAlcanzado = 4;
             }
         } else {

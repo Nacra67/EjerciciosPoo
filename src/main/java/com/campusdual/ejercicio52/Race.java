@@ -2,7 +2,7 @@ package com.campusdual.ejercicio52;
 
 import java.util.ArrayList;
 
-public class Race {
+public abstract class Race {
     protected String raceName;
     protected ArrayList<Garage> garagesInRace;
     protected ArrayList<Car> carsInRace;
@@ -25,7 +25,7 @@ public class Race {
     }
     public void comparationCar(){
         System.out.println("=====================================================\n" +
-                "no se an comparado los coches se agregara un punto aleatorio\n" +
+                "no se han comparado los coches se agregará un punto aleatorio\n" +
                 "=====================================================");
         this.carsInRace.get(1).addPoints(3);
 
