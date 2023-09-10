@@ -2,7 +2,7 @@ package com.campusdual.ejercicio52;
 
 import java.util.ArrayList;
 
-public class Tournament {
+public class Tournament implements Interface1 {
     private String tournamentName;
     private ArrayList<Race> tournamentRaceList;
     private ArrayList<Garage> tournamentGarageList;
@@ -18,7 +18,7 @@ public class Tournament {
         do {
 
             System.out.println("──Menu del Torneo──\n" +
-                    "───────────────────\n" +
+                    "──"+this.tournamentName+"──\n" +
                     "1.-Iniciar Torneo\n" +
                     "2.-Informacion del Torneo\n" +
                     "3.-Gestionar Participantes\n" +
@@ -76,7 +76,9 @@ public class Tournament {
             }
             Kb.enterContinuar("controlDeParticipantes");
     }
-
+    public String getName(){
+        return this.tournamentName;
+    }
     public String getTournamentName() {
         return tournamentName;
     }

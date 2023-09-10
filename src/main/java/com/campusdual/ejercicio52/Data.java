@@ -4,7 +4,7 @@ import org.json.simple.JSONArray;
 
 import java.util.ArrayList;
 
-public class Data {
+public class Data{
     private static ArrayList<Car> generalCarList = new ArrayList<>();
     private static ArrayList<Garage> generalGarageList = new ArrayList<>();
     private static ArrayList<Tournament> generalTournamentList = new ArrayList<>();
@@ -39,6 +39,42 @@ public class Data {
         generalTournamentList.add(torneo3);
 
 
+    }
+    public static void showList(Integer selection){
+        switch (selection){
+            case 1:
+                for (Car car : generalCarList){
+                    car.carInfo();
+                }
+                break;
+            case 2:
+                for (Car car : generalCarList){
+                    System.out.println(car.getName());
+                }
+                break;
+            case 3:
+                for (Car car : generalCarList){
+                    System.out.println(car.getName());
+                }
+                break;
+            case 4:
+                for (Car car : generalCarList){
+                    System.out.println(car.getName());
+                }
+                break;
+            default:
+                Kb.enterContinuar("error con la informacion Data.showList");
+                break;
+        }
+
+//        if (lista != null){
+//            ArrayList<Interface1> interfaz = new ArrayList<Interface1>();
+//            for (Interface1 item : lista){
+//                interfaz.add(item);
+//
+//
+//            }
+//        }
     }
     public static void startData(JSONArray jsonArray){
 

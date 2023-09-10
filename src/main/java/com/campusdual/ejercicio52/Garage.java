@@ -2,7 +2,7 @@ package com.campusdual.ejercicio52;
 
 import java.util.ArrayList;
 
-public class Garage {
+public class Garage implements Interface1{
     private ArrayList<Car> carList;
     private String garageName;
 
@@ -52,5 +52,8 @@ public class Garage {
     }
     public void addCarToGarage(Car car, String oldGarage){
         System.out.println("aqui falta implementar borrar car de garage anterior pa añadir a novo");
+    }
+    public String getName(){
+        return this.garageName;
     }
 }

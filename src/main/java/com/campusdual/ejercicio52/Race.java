@@ -2,7 +2,7 @@ package com.campusdual.ejercicio52;
 
 import java.util.ArrayList;
 
-public abstract class Race {
+public abstract class Race implements Interface1 {
     protected String raceName;
     protected ArrayList<Garage> garagesInRace;
     protected ArrayList<Car> carsInRace;
@@ -29,6 +29,9 @@ public abstract class Race {
                 "=====================================================");
         this.carsInRace.get(1).addPoints(3);
 
+    }
+    public String getName(){
+        return this.raceName;
     }
 
 }

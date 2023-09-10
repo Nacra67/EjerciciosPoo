@@ -19,7 +19,7 @@ public class Menu {
                 "────▀▀◯▀▀▀▀▀▀▀▀◯▀──────\n" +
                 "─────RACE─CONTROL!─────");
         startMainMenu();
-    }
+    }//startMainMenu
 
     public void startMainMenu() {
         Integer selection;
@@ -37,7 +37,7 @@ public class Menu {
                     organizarTorneo();
                     break;
                 case 2:
-                    Kb.enterContinuar("sin informacion");
+                    mostrarInformacion();
                     break;
                 case 3:
                     Kb.enterContinuar("Modificaciones en construccion");
@@ -52,7 +52,7 @@ public class Menu {
 
         } while (selection != 4);
         System.out.println(".....programa finalizado");
-    }
+    }//1de4
 
     public void organizarTorneo() {
         Integer selection;
@@ -69,11 +69,21 @@ public class Menu {
 
                 break;
             case 2:
+                newTournament();
+                Kb.enterContinuar("Entrando al menu del nuevo torneo");
+                actualTournament.tournamentMainMenu();
                 break;
             default:
                 Kb.enterContinuar("Volviendo al menu principal");
         }
-    }
+    }//salto a ()ShowTournaments //salto a newTournament()
+    public void newTournament(){
+        String tournamentName = Kb.nextLine("Escrive el nombre del torneo");
+        Tournament tournament = new Tournament(tournamentName);
+        Data.getGeneralTournamentList().add(tournament);
+        this.actualTournament = tournament;
+
+    }////Salto a actualTournament.tournamentMainMenu()
 
     public void showTournaments() {
         System.out.println("Seleccione el torneo que quiere organizar:");
@@ -85,6 +95,27 @@ public class Menu {
 
         Kb.enterContinuar("Ha seleccionado el " + this.actualTournament.getTournamentName());
         actualTournament.tournamentMainMenu();
-    }
+    }//Salto a actualTournament.tournamentMainMenu()
+    public void mostrarInformacion(){
+        Integer selection;
+        do {
+            System.out.println("=======================\n" +
+                    "==SELECCIONAR ACCION===\n" +
+                    "1.-Informacion de Coches\n" +
+                    "2.-Informacion de Garages\n" +
+                    "3.-Informacion de Carreras\n" +
+                    "4.-Informacion de Torneos\n" +
+                    "5.-SALIR" +
+                    ":...");
+            selection = Kb.sureNextInt();
+            if(selection< 5) {
+                Data.showList(selection);
+                Kb.enterContinuar("-------");
+            }
+        } while (selection != 5);
 
+    }
+    public void modificar(){
+
+    }
 }

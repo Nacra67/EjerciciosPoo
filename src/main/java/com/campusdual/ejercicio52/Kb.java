@@ -35,6 +35,12 @@ public class Kb {
         String result = keyboard.nextLine();
         return result;
     }
+    public static String nextLine(String text) {
+        System.out.print("text");
+        Scanner keyboard = new Scanner(System.in);
+        String result = keyboard.nextLine();
+        return result;
+    }
     public static void enterContinuar(String text){
         System.out.println("\n"+text);
         System.out.println("ENTER para continuar...\n");

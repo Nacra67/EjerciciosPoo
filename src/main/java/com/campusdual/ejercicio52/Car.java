@@ -5,7 +5,7 @@ import org.json.simple.JSONObject;
 import java.io.FileWriter;
 import java.util.Random;
 
-public class Car {
+public class Car implements Interface1 {
     private String marca;
     private String modelo;
     private String garage;
@@ -71,6 +71,9 @@ public class Car {
     public void endRace(){
         setSpeed(0.0);
         setDistance(0.0);
+    }
+    public String getName(){
+        return this.marca;
     }
     public void endTournament(){
         setPoints(0);
