@@ -22,7 +22,7 @@ public class Menu {
     private Diet myDiet;
     private ArrayList<Food> foodList;
     public Menu() {
-        this.myDiet = new Diet();
+        this.myDiet = new Diet();// null
         this.foodList = new ArrayList<>();
     }
     public void cargarAlimentos(){
@@ -124,7 +124,7 @@ public class Menu {
         Integer peso = selection();
         boolean contenido = false;
         for (int i = 0; i < myDiet.getDietFood().size(); i++){
-            if (myDiet.getDietFood().get(i).getNombre() == this.foodList.get(eleccion-1).getNombre()){
+            if (myDiet.getDietFood().get(i).getNombre().equalsIgnoreCase(this.foodList.get(eleccion-1).getNombre())){
                 myDiet.getFoodWeight().set(i,peso);
                 contenido = true;
                 System.out.println("la cantidad de peso de "+this.foodList.get(eleccion-1).getNombre()+"  cambiada a" + peso + "g");
@@ -138,6 +138,8 @@ public class Menu {
 
 
     public void newAlimento(){
+
+        //do
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese el nombre del alimento: ");
         String nombre = scanner.nextLine();
@@ -146,20 +148,22 @@ public class Menu {
         int fats = random.nextInt(31);
         int proteins = random.nextInt(31);
 
+        // Do while con try catch
+
         Food newAlimento= new Food(nombre, carbos, fats, proteins);
         System.out.println("cuantos gramos ponemos?");
         Integer peso = selection();
         boolean contenido = false;
         boolean contenido2 = false;
         for (int i = 0; i < myDiet.getDietFood().size(); i++){
-            if (myDiet.getDietFood().get(i).getNombre() == newAlimento.getNombre()){
+            if (myDiet.getDietFood().get(i).getNombre().equalsIgnoreCase(newAlimento.getNombre())){
                 myDiet.getFoodWeight().set(i,peso);
                 contenido = true;
                 System.out.println("la cantidad de peso de "+newAlimento.getNombre()+"  cambiada a" + peso + "g");
             }
         }
         for (int i = 0; i < foodList.size(); i++){
-            if (foodList.get(i).getNombre() == newAlimento.getNombre()){
+            if (foodList.get(i).getNombre().equalsIgnoreCase(newAlimento.getNombre())){
                 contenido2 = true;
                 System.out.println("esta comida ya esta incluida en nuestras recomendaciones");
             }
