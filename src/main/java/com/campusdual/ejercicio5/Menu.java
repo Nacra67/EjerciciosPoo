@@ -21,15 +21,20 @@ public class Menu {
 
     private static ArrayList<Pet> petList;
     private static ArrayList<Diet> dietList;
+    private static ArrayList<Food> foodList;
 
     public static void main(String[] args) {
 //        DietProgram program = new DietProgram();
 //        program.showMenuProgram();
         startData();
+        showData(55);
     }
 
 
     public static void startData() {
+        petList = new ArrayList<>();
+        dietList= new ArrayList<>();
+        foodList= new ArrayList<>();
         Pet pet4 = new Pet("Babe", "Pig", 55, 5, 18, 4);
         petList.add(pet4);
         Pet pet5 = new Pet("Shrek", "Ogre", 140, 30, 96, 2);
@@ -58,7 +63,32 @@ public class Menu {
         Intake intake10 = new Intake("Hierba", 3, 0, 1, 100);
         Intake intake11 = new Intake("Avena", 66, 7, 17, 100);
         Intake intake12 = new Intake("Huevo", 1, 5, 6, 50);
-//TODO NECESITAMOS FOOD!!!!!!!!!!!!!!
+
+        Food food1 = new Food("Plátano", 27, 0, 1);
+        foodList.add(food1);
+        Food food2 = new Food("Pollo", 0, 3, 27);
+        foodList.add(food2);
+        Food food3 = new Food("Pescado", 0, 5, 26);
+        foodList.add(food3);
+        Food food4 = new Food("Zanahoria", 10, 0, 1);
+        foodList.add(food4);
+        Food food5 = new Food("Heno", 35, 3, 9);
+        foodList.add(food5);
+        Food food6 = new Food("Manzana", 19, 0, 0);
+        foodList.add(food6);
+        Food food7 = new Food("Pienso", 40, 12, 18);
+        foodList.add(food7);
+        Food food8 = new Food("Lechuga", 5, 0, 1);
+        foodList.add(food8);
+        Food food9 = new Food("Carne de Res", 0, 15, 26);
+        foodList.add(food9);
+        Food food10 = new Food("Hierba", 3, 0, 1);
+        foodList.add(food10);
+        Food food11 = new Food("Avena", 66, 7, 17);
+        foodList.add(food11);
+        Food food12 = new Food("Huevo", 1, 5, 6);
+        foodList.add(food12);
+
         Diet diet1 = new Diet();
         diet1.setDietName("Dieta Estándar");
         diet1.getIntakes().add(intake1);
@@ -75,7 +105,6 @@ public class Menu {
         diet5.setDietName("Dieta Carnivora baja en calorias");
         diet5.getIntakes().add(intake9);
         diet5.getIntakes().add(intake2);
-
 
 
         Diet diet3 = new Diet(200, 200, 200);
@@ -96,11 +125,74 @@ public class Menu {
         dietList.add(diet5);
     }
 
+    public static void showData(Integer select) {
+        Integer count = 0;
+        if (select == 1) {
+            System.out.println("\n Lista de mascottas");
+            for (Pet pet : petList) {
+                count++;
+                System.out.println(count + ".-Nomber: " + pet.getName() + " Especie: " + pet.getSpecies());
+            }
+
+        } else if (select == 2) {
+            System.out.println("\n Lista de Dietas");
+            for (Diet diet : dietList) {
+                count++;
+                System.out.println(count + ".-Dieta: " + diet.getDietName());
+
+
+            }
+        } else if (select == 3) {
+            System.out.println("\n Lista de alimentos");
+            for (Food food : foodList) {
+                count++;
+                System.out.println(count + ".-alimento-> " + food.getName());
+
+            }
+
+        } else {
+            System.out.println("\n Lista de Mascotas");
+            for (Pet pet : petList) {
+                count++;
+                System.out.println(count + ".-Nomber: " + pet.getName() + " Especie: " + pet.getSpecies());
+            }count = 0;
+            System.out.println("\n Lista Dietas");
+            for (Diet diet : dietList) {
+                count++;
+                System.out.println(count + ".-Dieta: " + diet.getDietName());
+            }count = 0;
+            System.out.println("\n Lista de alimentos");
+            for (Food food : foodList) {
+                count++;
+                System.out.println(count + ".-alimento-> " + food.getName());
+            }
+
+        }
+
+
+    }
+
     public static ArrayList<Pet> getPetList() {
         return petList;
     }
 
     public static ArrayList<Diet> getDietList() {
         return dietList;
+    }
+
+    public static void setPetList(ArrayList<Pet> petList) {
+        Menu.petList = petList;
+    }
+
+    public static void setDietList(ArrayList<Diet> dietList) {
+        Menu.dietList = dietList;
+    }
+
+    public static ArrayList<Food> getFoodList() {
+        return foodList;
+    }
+
+    public static void setFoodList(ArrayList<Food> foodList) {
+        Menu.foodList = foodList;
     }
 }

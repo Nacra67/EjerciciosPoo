@@ -15,7 +15,7 @@ public class DietProgram {
     private List<Food> foodList;
 
     public DietProgram(){
-        foodList = new ArrayList<>();
+        foodList = Menu.getFoodList();
     }
 
     private Integer getOption(Integer min,Integer max){
