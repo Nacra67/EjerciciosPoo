@@ -34,8 +34,8 @@ public class Menu {
 
     public static void startData() {
         petList = new ArrayList<>();
-        dietList= new ArrayList<>();
-        foodList= new ArrayList<>();
+        dietList = new ArrayList<>();
+        foodList = new ArrayList<>();
         Pet pet4 = new Pet("Babe", "Pig", 55, 5, 18, 4);
         petList.add(pet4);
         Pet pet5 = new Pet("Shrek", "Ogre", 140, 30, 96, 2);
@@ -125,6 +125,7 @@ public class Menu {
         dietList.add(diet4);
         dietList.add(diet5);
     }
+
     public static void showData(Integer select) {
         Integer count = 0;
         if (select == 1) {
@@ -155,12 +156,14 @@ public class Menu {
             for (Pet pet : petList) {
                 count++;
                 System.out.println(count + ".-Nomber: " + pet.getName() + " Especie: " + pet.getSpecies());
-            }count = 0;
+            }
+            count = 0;
             System.out.println("\n Lista Dietas");
             for (Diet diet : dietList) {
                 count++;
                 System.out.println(count + ".-Dieta: " + diet.getDietName());
-            }count = 0;
+            }
+            count = 0;
             System.out.println("\n Lista de alimentos");
             for (Food food : foodList) {
                 count++;
@@ -171,7 +174,8 @@ public class Menu {
 
 
     }
-    public static void mainMenu(){
+
+    public static void mainMenu() {
         System.out.println("       .__  .__       .__                              __               .__                    .__        \n" +
                 "  ____ |  | |__| ____ |__| ____ _____    ___  __ _____/  |_  ___________|__| ____ _____ _______|__|____   \n" +
                 "_/ ___\\|  | |  |/    \\|  |/ ___\\\\__  \\   \\  \\/ // __ \\   __\\/ __ \\_  __ \\  |/    \\\\__  \\\\_  __ \\  \\__  \\  \n" +
@@ -193,9 +197,52 @@ public class Menu {
         System.out.println("########################################################");
         System.out.println("################# Programa de dietas ###################");
         System.out.println("########################################################");
+        System.out.println("########################################################");
+        Integer option;
+        do {
+            System.out.println("Escriba una opción:");
+            System.out.println("===================================");
+            System.out.println("1-Gestion de Mascotas");
+            System.out.println("2-Gestion de dietas");
+            System.out.println("3-Salir del programa");
+            option = Kb.getOption(1, 3);
+            switch (option) {
+                case 1:
+                    showData(1);
+                    PetProgram petProgram = new PetProgram(chosePet());
+                    petProgram.showPetProgram();
+
+                    break;
+                case 2:
+                    showData(2);
+                    //choseDiet();
+                    break;
+                case 3:
+                    //addFoodMenu();
+                    break;
+                case 4:
+                    System.out.println("Gracias por usar el programa, hasta pronto :)");
+                    break;
+            }
+        } while (option != 3);
 
 
     }
+
+    public static Pet chosePet() {
+        Pet pet;
+        Integer select = Kb.getOption(1, petList.size() + 1);
+        if (select <= petList.size()) {
+            pet = petList.get(select - 1);
+        }else{
+            pet=new Pet();
+            pet.setAll();
+        }
+        return pet;
+    }
+
+
+
 
     public static ArrayList<Pet> getPetList() {
         return petList;

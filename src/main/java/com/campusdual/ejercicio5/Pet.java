@@ -18,6 +18,9 @@ public class Pet {
     private Integer sex;
     private ArrayList<Diet> weekDiets;
 
+    public Pet(){
+
+    }
     public Pet(String name, String species, Integer weight, Integer age, Integer ownerID, Integer sex) {
         this.name = name;
         this.species = species;
@@ -27,6 +30,11 @@ public class Pet {
         this.sex = sex;
         this.weekDiets = null;
     }
+    public void setAll(){
+        //TODO setes con Kb de atributos
+        System.out.println("pet sin atributos creada (pendiente)");
+    }
+
 
     public String getName() {
         return name;

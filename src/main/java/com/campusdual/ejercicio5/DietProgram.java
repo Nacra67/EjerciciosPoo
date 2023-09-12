@@ -13,6 +13,7 @@ public class DietProgram {
     private List<Food> foodList;
 
     public DietProgram(){
+
         foodList = Menu.getFoodList();
     }
 
