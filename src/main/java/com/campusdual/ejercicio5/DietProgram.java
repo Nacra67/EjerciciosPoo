@@ -16,17 +16,28 @@ public class DietProgram {
 
         foodList = Menu.getFoodList();
     }
+    public DietProgram(Diet diet){
+        this.diet = diet;
+        this.foodList = Menu.getFoodList();
+    }
+    public String ifDiet(){
+        if(diet != null){
+            return "Dieta:"+diet.getDietName();
+        }else{
+            return "Dieta no seleccionada";
+        }
+    }
 
 
     public void showMenuProgram(){
         System.out.println("########################################################");
         System.out.println("################# Programa de dietas ###################");
-        System.out.println("########################################################");
+        System.out.println("##############"+ifDiet()+"#############");
         Integer option;
         do{
             System.out.println("Escriba una opción:");
             System.out.println("===================================");
-            System.out.println("1-Crear/reiniciar dieta");
+            System.out.println("1-Reiniciar dieta");
             System.out.println("2-Mostrar información de la dieta");
             System.out.println("3-Agregar alimento al plan actual");
             System.out.println("4-Salir del programa");
@@ -124,7 +135,7 @@ public class DietProgram {
         }
     }
 
-    private void createMenu() {
+    protected void createMenu() {
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         System.out.println("Crear/reiniciar dieta");
         System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
@@ -201,5 +212,21 @@ public class DietProgram {
             System.out.println("La dieta no esta iniciada");
             System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
         }
+    }
+
+    public Diet getDiet() {
+        return diet;
+    }
+
+    public void setDiet(Diet diet) {
+        this.diet = diet;
+    }
+
+    public List<Food> getFoodList() {
+        return foodList;
+    }
+
+    public void setFoodList(List<Food> foodList) {
+        this.foodList = foodList;
     }
 }

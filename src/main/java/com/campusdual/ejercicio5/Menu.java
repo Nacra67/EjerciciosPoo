@@ -197,7 +197,7 @@ public class Menu {
         System.out.println("########################################################");
         System.out.println("################# Programa de dietas ###################");
         System.out.println("########################################################");
-        System.out.println("########################################################");
+        System.out.println("#################   MENU PRINCIPAL  ####################");
         Integer option;
         do {
             System.out.println("Escriba una opción:");
@@ -209,18 +209,22 @@ public class Menu {
             switch (option) {
                 case 1:
                     showData(1);
-                    PetProgram petProgram = new PetProgram(chosePet());
-                    petProgram.showPetProgram();
+                    Pet alcualPet = chosePet();
+                    if (alcualPet != null) {
+                        PetProgram petProgram = new PetProgram(alcualPet);
+                        petProgram.showPetProgram();
+                    }
 
                     break;
                 case 2:
                     showData(2);
-                    //choseDiet();
+                    Diet alcualDiet = choseDiet();
+                    if (alcualDiet != null) {
+                        DietProgram dietProgram = new DietProgram(alcualDiet);
+                        dietProgram.showMenuProgram();
+                    }
                     break;
                 case 3:
-                    //addFoodMenu();
-                    break;
-                case 4:
                     System.out.println("Gracias por usar el programa, hasta pronto :)");
                     break;
             }
@@ -231,17 +235,37 @@ public class Menu {
 
     public static Pet chosePet() {
         Pet pet;
-        Integer select = Kb.getOption(1, petList.size() + 1);
+        System.out.println(petList.size()+1+".-Añadir NEW mascota");
+        System.out.println(petList.size()+2+".-Atras");
+        Integer select = Kb.getOption(1, petList.size() + 2);
         if (select <= petList.size()) {
             pet = petList.get(select - 1);
-        }else{
-            pet=new Pet();
+        } else if (petList.size()+1 == select) {
+            pet = new Pet();
             pet.setAll();
+        } else {
+            pet = null;
+
         }
         return pet;
     }
+    public static Diet choseDiet() {
+        Diet diet;
+        System.out.println(dietList.size()+1+".-Añadir NEW mascota");
+        System.out.println(dietList.size()+2+".-Atras");
+        Integer select = Kb.getOption(1, dietList.size() + 2);
+        if (select <= dietList.size()) {
+            diet = dietList.get(select - 1);
+        } else if (dietList.size()+1 == select) {
+            DietProgram  dietProgram = new DietProgram();
+            dietProgram.createMenu();
+            diet = dietProgram.getDiet();
+        } else {//TODO//////////////////////////crear dieta nueva
+            diet = null;
 
-
+        }
+        return diet;
+    }
 
 
     public static ArrayList<Pet> getPetList() {
