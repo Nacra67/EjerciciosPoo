@@ -22,20 +22,20 @@ public class PetProgram {
         do{
             System.out.println("Escriba una opción:");
             System.out.println("===================================");
-            System.out.println("1-");
-            System.out.println("2-");
-            System.out.println("3-");
-            System.out.println("4-Salir del programa");
+            System.out.println("1.- Cambiar de mascota");
+            System.out.println("2.- Mostrar Informacion");
+            System.out.println("3.- Gestionar sus dietas");
+            System.out.println("4.- Salir del programa");
             option = Kb.getOption(1,4);
             switch (option){
                 case 1:
-                    //createMenu();
+                    //chagePet();
                     break;
                 case 2:
-                    //showDetailsMenu();
+                    this.petActive.showPetDetails();
                     break;
                 case 3:
-                    //addFoodMenu();
+                    //managePetDiets();
                     break;
                 case 4:
                     System.out.println("Gracias por usar el programa, hasta pronto :)");

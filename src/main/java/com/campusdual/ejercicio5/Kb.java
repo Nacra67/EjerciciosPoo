@@ -47,6 +47,12 @@ public class Kb {
     }
 
     public static String nextLine(){
+        return nextLine(null);
+    }
+    public static String nextLine(String text){
+        if (text != null){
+            System.out.println(text);
+        }
         Scanner keyboard = new Scanner(System.in);
         String result = keyboard.nextLine();
         return result;

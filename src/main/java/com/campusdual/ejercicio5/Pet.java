@@ -16,11 +16,14 @@ public class Pet {
     private Integer age;
     private Integer ownerID;
     private Integer sex;
-    private ArrayList<Diet> weekDiets;
+    private Diet [] weekDiets = new Diet[7];
+    private String animalSex[] = {"Macho", "Hembra"};
 
     public Pet(){
 
     }
+
+
     public Pet(String name, String species, Integer weight, Integer age, Integer ownerID, Integer sex) {
         this.name = name;
         this.species = species;
@@ -28,13 +31,33 @@ public class Pet {
         this.age = age;
         this.ownerID = ownerID;
         this.sex = sex;
-        this.weekDiets = null;
     }
     public void setAll(){
         //TODO setes con Kb de atributos
         System.out.println("pet sin atributos creada (pendiente)");
     }
+    public void showPetDetails(){
+        System.out.println("Name: " + this.name);
+        System.out.println("Species: " + this.species);
+        System.out.println("Weight: " + this.weight);
+        System.out.println("Age: " + this.age);
+        System.out.println("Owner ID: " + this.ownerID);
+        showWeekDiet();
 
+    }
+    public void showWeekDiet(){
+        for (int i = 0; i < weekDiets.length; i++) {
+            Diet diet = weekDiets[i];
+            if (diet != null) {
+                System.out.println((i + 1) + ".- "+Days.getDayFromPosition(i).getName()+ " Dieta: " + diet.getDietName());
+            } else {
+                System.out.println((i + 1) + ".- "+Days.getDayFromPosition(i).getName()+ " No diet assigned");
+            }
+        }
+    }
+    public void managePetDiets(){
+
+    }
 
     public String getName() {
         return name;
@@ -84,11 +107,11 @@ public class Pet {
         this.sex = sex;
     }
 
-    public ArrayList<Diet> getWeekDiets() {
+    public Diet[] getWeekDiets() {
         return weekDiets;
     }
 
-    public void setWeekDiets(ArrayList<Diet> weekDiets) {
+    public void setWeekDiets(Diet[] weekDiets) {
         this.weekDiets = weekDiets;
     }
 }

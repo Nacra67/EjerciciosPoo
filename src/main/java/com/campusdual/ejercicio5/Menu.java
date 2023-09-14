@@ -27,8 +27,19 @@ public class Menu {
 //        DietProgram program = new DietProgram();
 //        program.showMenuProgram();
         startData();
-        showData(55);
+//        showData(55);
         mainMenu();
+//        Food [] array = new Food[7];
+//        Food comi = new Food(" drfe",1,1,1);
+//        array[1] = comi;
+//        for(Food food: array){
+//            if (food == null){
+//                System.out.println(food);
+//
+//            }else {
+//                System.out.println(food.getName());
+//            }
+//        }
     }
 
 
@@ -129,7 +140,7 @@ public class Menu {
     public static void showData(Integer select) {
         Integer count = 0;
         if (select == 1) {
-            System.out.println("\n Lista de mascottas");
+            System.out.println("\n Lista de mascotas");
             for (Pet pet : petList) {
                 count++;
                 System.out.println(count + ".-Nomber: " + pet.getName() + " Especie: " + pet.getSpecies());
@@ -238,6 +249,7 @@ public class Menu {
         System.out.println(petList.size()+1+".-Añadir NEW mascota");
         System.out.println(petList.size()+2+".-Atras");
         Integer select = Kb.getOption(1, petList.size() + 2);
+
         if (select <= petList.size()) {
             pet = petList.get(select - 1);
         } else if (petList.size()+1 == select) {
@@ -251,7 +263,7 @@ public class Menu {
     }
     public static Diet choseDiet() {
         Diet diet;
-        System.out.println(dietList.size()+1+".-Añadir NEW mascota");
+        System.out.println(dietList.size()+1+".-Añadir neva Dieta");
         System.out.println(dietList.size()+2+".-Atras");
         Integer select = Kb.getOption(1, dietList.size() + 2);
         if (select <= dietList.size()) {
@@ -260,7 +272,7 @@ public class Menu {
             DietProgram  dietProgram = new DietProgram();
             dietProgram.createMenu();
             diet = dietProgram.getDiet();
-        } else {//TODO//////////////////////////crear dieta nueva
+        } else {
             diet = null;
 
         }
