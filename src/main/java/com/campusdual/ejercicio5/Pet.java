@@ -30,7 +30,7 @@ public class Pet {
         this.weight = weight;
         this.age = age;
         this.ownerID = ownerID;
-        this.sex = sex;
+        this.sex = sex%2;
     }
     public void setAll(){
         //TODO setes con Kb de atributos
@@ -58,8 +58,11 @@ public class Pet {
     }
     public void managePetDiets(Integer dayInt, Diet diet){
         this.weekDiets[dayInt] = diet;
-        System.out.println("Su dieta del "+Days.getDayFromPosition(dayInt) + " esta actualizada");
+        System.out.println("Su dieta del "+Days.getDayFromPosition(dayInt).getName() + " esta actualizada");
 
+    }
+    public String getGenre(){
+        return  this.animalSex[sex];
     }
 
     public String getName() {
