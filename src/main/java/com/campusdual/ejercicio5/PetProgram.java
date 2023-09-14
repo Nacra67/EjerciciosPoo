@@ -35,7 +35,17 @@ public class PetProgram {
                     this.petActive.showPetDetails();
                     break;
                 case 3:
-                    //managePetDiets();
+                    Integer close;
+                    do{
+                        System.out.println("Dieta actual de la semana");
+                        this.petActive.showWeekDiet();
+                        System.out.println("8.-Atras");
+                        Integer dayInt = Kb.getOption(1, 8) - 1;
+                        close = dayInt;
+                        Menu.showData(2);
+                        Diet diet = Menu.choseDiet();
+                        this.petActive.managePetDiets(dayInt, diet);
+                    }while (close < 7);
                     break;
                 case 4:
                     System.out.println("Gracias por usar el programa, hasta pronto :)");

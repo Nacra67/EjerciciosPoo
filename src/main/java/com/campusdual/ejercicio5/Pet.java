@@ -42,6 +42,7 @@ public class Pet {
         System.out.println("Weight: " + this.weight);
         System.out.println("Age: " + this.age);
         System.out.println("Owner ID: " + this.ownerID);
+        System.out.println(this.animalSex[sex]);
         showWeekDiet();
 
     }
@@ -55,7 +56,9 @@ public class Pet {
             }
         }
     }
-    public void managePetDiets(){
+    public void managePetDiets(Integer dayInt, Diet diet){
+        this.weekDiets[dayInt] = diet;
+        System.out.println("Su dieta del "+Days.getDayFromPosition(dayInt) + " esta actualizada");
 
     }
 
