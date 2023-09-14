@@ -25,7 +25,7 @@ public class PetProgram {
             System.out.println("1.- Cambiar de mascota");
             System.out.println("2.- Mostrar Informacion");
             System.out.println("3.- Gestionar sus dietas");
-            System.out.println("4.- Salir del programa");
+            System.out.println("4.- Atras");
             option = Kb.getOption(1,4);
             switch (option){
                 case 1:
@@ -35,17 +35,18 @@ public class PetProgram {
                     this.petActive.showPetDetails();
                     break;
                 case 3:
-                    Integer close;
+                    Integer dayInt;
                     do{
                         System.out.println("Dieta actual de la semana");
                         this.petActive.showWeekDiet();
                         System.out.println("8.-Atras");
-                        Integer dayInt = Kb.getOption(1, 8) - 1;
-                        close = dayInt;
-                        Menu.showData(2);
-                        Diet diet = Menu.choseDiet();
-                        this.petActive.managePetDiets(dayInt, diet);
-                    }while (close < 7);
+                        dayInt = Kb.getOption(1, 8) - 1;
+                        if(dayInt != 7){
+                            Menu.showData(2);
+                            Diet diet = Menu.choseDiet();
+                            this.petActive.managePetDiets(dayInt, diet);
+                        }
+                    }while (dayInt !=7);
                     break;
                 case 4:
                     System.out.println("Gracias por usar el programa, hasta pronto :)");

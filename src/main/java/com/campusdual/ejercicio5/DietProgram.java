@@ -188,7 +188,7 @@ public class DietProgram {
                 System.out.println("Se ha creado una dieta de "+this.diet.getMaxCalories()+" calorías máximas");
                 break;
         }
-    }
+    }//Todo //////// agregar nombre al crear///////
 
     private void showDetailsMenu() {
         if(this.diet!=null){

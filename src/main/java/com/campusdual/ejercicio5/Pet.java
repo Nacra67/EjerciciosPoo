@@ -1,6 +1,6 @@
 package com.campusdual.ejercicio5;
 
-import java.util.ArrayList;
+
 
 //  -Se pueden dar de alta personas: Las personas tendrán los siguientes atributos: nombre, apellidos, peso, altura, edad y sexo.
 //    -Las personas podrán tener asignadas una lista de dietas que se catalogarán de lunes a domingo sacadas de la lista de dietas anterior.
@@ -59,6 +59,7 @@ public class Pet {
     public void managePetDiets(Integer dayInt, Diet diet){
         this.weekDiets[dayInt] = diet;
         System.out.println("Su dieta del "+Days.getDayFromPosition(dayInt).getName() + " esta actualizada");
+
 
     }
     public String getGenre(){
