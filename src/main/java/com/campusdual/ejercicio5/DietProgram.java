@@ -40,8 +40,9 @@ public class DietProgram {
             System.out.println("1-Reiniciar dieta");
             System.out.println("2-Mostrar información de la dieta");
             System.out.println("3-Agregar alimento al plan actual");
-            System.out.println("4-Salir del programa");
-            option = Kb.getOption(1,4);
+            System.out.println("4-Eliminar dieta");
+            System.out.println("5-Salir del programa");
+            option = Kb.getOption(1,5);
             switch (option){
                 case 1:
                     createMenu();
@@ -53,10 +54,13 @@ public class DietProgram {
                     addFoodMenu();
                     break;
                 case 4:
+                    Menu.removeDiet(diet);
+                    break;
+                case 5:
                     System.out.println("Gracias por usar el programa, hasta pronto :)");
                     break;
             }
-        }while(option != 4);
+        }while(option < 4);
     }
 
     private void addFoodMenu() {

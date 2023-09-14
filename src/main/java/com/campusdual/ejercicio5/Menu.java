@@ -279,6 +279,30 @@ public class Menu {
         return diet;
     }
 
+    public static Boolean dietInUserChec(Diet activeDiet){
+        Boolean inUse = false;
+        for (Pet pet: petList){
+            for (Diet diet: pet.getWeekDiets()){
+                if(activeDiet == diet){
+                    System.out.println(pet.getName());
+                    inUse=true;
+                    return inUse;
+                }
+            }
+        }
+        return inUse;
+    }
+    public static void removeDiet(Diet activeDiet){
+
+        if (!dietInUserChec(activeDiet)){
+            if (dietList.remove(activeDiet)) {
+                System.out.println(activeDiet.getDietName() + " ha sido eliminada");
+            }
+        }else {
+            System.out.println("no se pueden eliminar dietas activas");
+        }
+    }
+
 
     public static ArrayList<Pet> getPetList() {
         return petList;
