@@ -26,9 +26,12 @@ public class Menu {
     public static void main(String[] args) {
 //        DietProgram program = new DietProgram();
 //        program.showMenuProgram();
+
        startData();
+
 //        showData(55);
         //starProgram();
+
         mainMenu();
 //        Food [] array = new Food[7];
 //        Food comi = new Food(" drfe",1,1,1);
