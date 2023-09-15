@@ -26,8 +26,9 @@ public class Menu {
     public static void main(String[] args) {
 //        DietProgram program = new DietProgram();
 //        program.showMenuProgram();
-        startData();
+       startData();
 //        showData(55);
+        //starProgram();
         mainMenu();
 //        Food [] array = new Food[7];
 //        Food comi = new Food(" drfe",1,1,1);
@@ -42,7 +43,17 @@ public class Menu {
 //        }
     }
 
-
+    public static void starProgram(){
+        petList = new ArrayList<>();
+        dietList = new ArrayList<>();
+        foodList = new ArrayList<>();
+        try {
+            mainMenu();
+        } catch (NullPointerException e){
+            System.out.println("No se encuentran datos en tu Programa de Dietas");
+            e.printStackTrace();
+        }
+    }
     public static void startData() {
         petList = new ArrayList<>();
         dietList = new ArrayList<>();
@@ -246,13 +257,13 @@ public class Menu {
 
     public static Pet chosePet() {
         Pet pet;
-        System.out.println(petList.size()+1+".-Añadir NEW mascota");
-        System.out.println(petList.size()+2+".-Atras");
+        System.out.println(petList.size() + 1 + ".-Añadir NEW mascota");
+        System.out.println(petList.size() + 2 + ".-Atras");
         Integer select = Kb.getOption(1, petList.size() + 2);
 
         if (select <= petList.size()) {
             pet = petList.get(select - 1);
-        } else if (petList.size()+1 == select) {
+        } else if (petList.size() + 1 == select) {
             pet = new Pet();
             pet.setAll();
         } else {
@@ -261,15 +272,16 @@ public class Menu {
         }
         return pet;
     }
+
     public static Diet choseDiet() {
         Diet diet;
-        System.out.println(dietList.size()+1+".-Añadir neva Dieta");
-        System.out.println(dietList.size()+2+".-Atras");
+        System.out.println(dietList.size() + 1 + ".-Añadir neva Dieta");
+        System.out.println(dietList.size() + 2 + ".-Atras");
         Integer select = Kb.getOption(1, dietList.size() + 2);
         if (select <= dietList.size()) {
             diet = dietList.get(select - 1);
-        } else if (dietList.size()+1 == select) {
-            DietProgram  dietProgram = new DietProgram();
+        } else if (dietList.size() + 1 == select) {
+            DietProgram dietProgram = new DietProgram();
             dietProgram.createMenu();
             diet = dietProgram.getDiet();
         } else {
@@ -279,26 +291,27 @@ public class Menu {
         return diet;
     }
 
-    public static Boolean dietInUserChec(Diet activeDiet){
+    public static Boolean dietInUserChec(Diet activeDiet) {
         Boolean inUse = false;
-        for (Pet pet: petList){
-            for (Diet diet: pet.getWeekDiets()){
-                if(activeDiet == diet){
+        for (Pet pet : petList) {
+            for (Diet diet : pet.getWeekDiets()) {
+                if (activeDiet == diet) {
                     System.out.println(pet.getName());
-                    inUse=true;
+                    inUse = true;
                     return inUse;
                 }
             }
         }
         return inUse;
     }
-    public static void removeDiet(Diet activeDiet){
 
-        if (!dietInUserChec(activeDiet)){
+    public static void removeDiet(Diet activeDiet) {
+
+        if (!dietInUserChec(activeDiet)) {
             if (dietList.remove(activeDiet)) {
                 System.out.println(activeDiet.getDietName() + " ha sido eliminada");
             }
-        }else {
+        } else {
             System.out.println("no se pueden eliminar dietas activas");
         }
     }
