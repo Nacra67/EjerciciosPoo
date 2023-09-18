@@ -32,7 +32,7 @@ public class Pet {
         this.sex = sex%2;
     }
     public void setAll(){
-        //TODO setes con Kb de atributos
+        //TODO: setes con Kb de atributos
         System.out.println("pet sin atributos creada (pendiente)");
     }
     public void showPetDetails(){

@@ -1,1 +1,2 @@
-Shrek;Ogre;140;30;96;0
+Simba;León;180;2;90;0
+Simba;León;180;2;90;0

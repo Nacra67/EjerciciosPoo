@@ -10,6 +10,10 @@ package com.campusdual.ejercicio5;
 
 public class PetProgram {
     private Pet petActive;
+    public PetProgram() {
+
+        this.petActive = petActive;//mascota activa
+    }
     public PetProgram(Pet petActive) {
 
         this.petActive = petActive;//mascota activa

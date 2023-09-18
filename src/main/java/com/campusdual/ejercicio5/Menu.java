@@ -27,13 +27,13 @@ public class Menu {
 //        DietProgram program = new DietProgram();
 //        program.showMenuProgram();
 
-         startData();
+//         startData();
 
-        showData(55);
-        Pet shrek = petList.get(1);
-        System.out.println(shrek.patientToString());
-        saveInfo.savePet(shrek);
-        //starProgram();
+//        showData(55);
+//        Pet shrek = petList.get(3);
+//        System.out.println(shrek.patientToString());
+//        saveInfo.savePet(shrek);
+        starProgram();
 
         //mainMenu();
 //        Food [] array = new Food[7];
@@ -236,13 +236,17 @@ public class Menu {
             option = Kb.getOption(1, 3);
             switch (option) {
                 case 1:
-                    showData(1);
-                    Pet alcualPet = chosePet();
-                    if (alcualPet != null) {
-                        PetProgram petProgram = new PetProgram(alcualPet);
-                        petProgram.showPetProgram();
+                    if(petList.size() == 0){
+                        PetProgram petProgram = new PetProgram();
+                        //TOdo//// crear mascotas nueva
+                    }else {
+                        showData(1);
+                        Pet alcualPet = chosePet();
+                        if (alcualPet != null) {
+                            PetProgram petProgram = new PetProgram(alcualPet);
+                            petProgram.showPetProgram();
+                        }
                     }
-
                     break;
                 case 2:
                     showData(2);
