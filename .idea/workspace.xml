@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d68dbcb-6351-4344-866d-9d2201ff4c2e" name="Changes" comment="ejercicio años bisiestos" />
+    <list default="true" id="9d68dbcb-6351-4344-866d-9d2201ff4c2e" name="Changes" comment="pets e probar programa sin datos&#10;&#10;añadidos comentarios a PetProgram">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/campusdual/ejercicio5/saveInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/pets.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/campusdual/ejercicio5/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/campusdual/ejercicio5/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/campusdual/ejercicio5/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/campusdual/ejercicio5/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/campusdual/ejercicio52/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/campusdual/ejercicio52/Data.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +20,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -36,16 +44,18 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Ejercicio2">
-    <configuration name="Ejercicio1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.campusdual.ejercicio1.Ejercicio1" />
+  <component name="RunManager" selected="Application.Menu">
+    <configuration name="Car" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.campusdual.ejercicio52.Car" />
       <module name="EjerciciosPoo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.campusdual.ejercicio1.*" />
+          <option name="PATTERN" value="com.campusdual.ejercicio52.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -53,12 +63,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ejercicio2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.campusdual.ejercicio2.Ejercicio2" />
+    <configuration name="Control" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.campusdual.ejercicio52.Control" />
       <module name="EjerciciosPoo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.campusdual.ejercicio2.*" />
+          <option name="PATTERN" value="com.campusdual.ejercicio52.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ejercicio4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.campusdual.ejercicio4.Ejercicio4" />
+      <module name="EjerciciosPoo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.campusdual.ejercicio4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ejercicio41" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.campusdual.ejercicio41.Ejercicio41" />
+      <module name="EjerciciosPoo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.campusdual.ejercicio41.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Menu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.campusdual.ejercicio5.Menu" />
+      <module name="EjerciciosPoo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.campusdual.ejercicio5.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -68,8 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Ejercicio2" />
-        <item itemvalue="Application.Ejercicio1" />
+        <item itemvalue="Application.Menu" />
+        <item itemvalue="Application.Ejercicio41" />
+        <item itemvalue="Application.Control" />
+        <item itemvalue="Application.Ejercicio4" />
+        <item itemvalue="Application.Car" />
       </list>
     </recent_temporary>
   </component>
@@ -124,7 +176,168 @@
       <option name="project" value="LOCAL" />
       <updated>1693910525750</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ejercicio años bisiestos, tiña razon o chorar ano%4 == 0 siempre era true (redundante)">
+      <created>1693910699740</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1693910699740</updated>
+    </task>
+    <task id="LOCAL-00008" summary="switch ejercicio 3">
+      <created>1693918718482</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693918718482</updated>
+    </task>
+    <task id="LOCAL-00009" summary="ejercicio4 pila de menus infinita">
+      <created>1694073783937</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1694073783937</updated>
+    </task>
+    <task id="LOCAL-00010" summary="tipos de dieta , bucle while e moitos warning">
+      <created>1694088880641</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1694088880641</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Race, solo cars">
+      <created>1694169081241</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1694169081241</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Race, solo cars">
+      <created>1694177406788</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1694177406788</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Primera carrera del garage de manolo">
+      <created>1694274414832</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1694274414832</updated>
+    </task>
+    <task id="LOCAL-00014" summary="empezando torneos&#10;&#10;menu de dieta añadir nuevo alimento esta roto">
+      <created>1694286582814</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1694286582814</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Empezando menus&#10;&#10;menu de dieta añadir nuevo alimento esta roto">
+      <created>1694380682170</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1694380682170</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Empezando menus&#10;Pelea con showInfo / Interface 1 - 0 yo &#10;&#10;menu de dieta añadir nuevo alimento esta roto">
+      <created>1694387626842</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1694387626842</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Empezando menus&#10;Pelea con showInfo / Interface 1 - 0 yo &#10;&#10;menu de dieta añadir nuevo alimento esta roto">
+      <created>1694473329835</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1694473329835</updated>
+    </task>
+    <task id="LOCAL-00018" summary="show data">
+      <created>1694517616015</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1694517616015</updated>
+    </task>
+    <task id="LOCAL-00019" summary="show data">
+      <created>1694520724672</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1694520724672</updated>
+    </task>
+    <task id="LOCAL-00020" summary="menu principal en menu">
+      <created>1694524598399</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1694524598399</updated>
+    </task>
+    <task id="LOCAL-00021" summary="dietas unidas o menu, falta borrar dietas, e funcionalidades de Pets">
+      <created>1694593582938</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1694593582938</updated>
+    </task>
+    <task id="LOCAL-00022" summary="falta borrar dietas, pets e probar programa sin datos &#10;-en pets añadir gestion de dietas">
+      <created>1694650952570</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1694650952570</updated>
+    </task>
+    <task id="LOCAL-00023" summary="falta borrar dietas, pets e probar programa sin datos">
+      <created>1694652172209</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1694652172209</updated>
+    </task>
+    <task id="LOCAL-00024" summary="falta borrar dietas, pets e probar programa sin datos">
+      <created>1694652942634</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1694652942634</updated>
+    </task>
+    <task id="LOCAL-00025" summary="falta borrar dietas, pets e probar programa sin datos">
+      <created>1694694345757</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1694694345757</updated>
+    </task>
+    <task id="LOCAL-00026" summary="pets e probar programa sin datos">
+      <created>1694696244699</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1694696244699</updated>
+    </task>
+    <task id="LOCAL-00027" summary="pets e probar programa sin datos&#10;&#10;añadidos comentarios a PetProgram">
+      <created>1694784844718</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1694784844718</updated>
+    </task>
+    <task id="LOCAL-00028" summary="pets e probar programa sin datos&#10;&#10;añadidos comentarios a PetProgram">
+      <created>1694784913635</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1694784913635</updated>
+    </task>
+    <task id="LOCAL-00029" summary="pets e probar programa sin datos&#10;&#10;añadidos comentarios a PetProgram">
+      <created>1695036843050</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1695036843050</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +354,23 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="inicio" />
     <MESSAGE value="ejercicio años bisiestos" />
-    <option name="LAST_COMMIT_MESSAGE" value="ejercicio años bisiestos" />
+    <MESSAGE value="ejercicio años bisiestos, tiña razon o chorar ano%4 == 0 siempre era true (redundante)" />
+    <MESSAGE value="switch ejercicio 3" />
+    <MESSAGE value="ejercicio4 pila de menus infinita" />
+    <MESSAGE value="tipos de dieta e bucle while" />
+    <MESSAGE value="tipos de dieta , bucle while e moitos warning" />
+    <MESSAGE value="Race, solo cars" />
+    <MESSAGE value="Primera carrera del garage de manolo" />
+    <MESSAGE value="empezando torneos&#10;&#10;menu de dieta añadir nuevo alimento esta roto" />
+    <MESSAGE value="Empezando menus&#10;&#10;menu de dieta añadir nuevo alimento esta roto" />
+    <MESSAGE value="Empezando menus&#10;Pelea con showInfo / Interface 1 - 0 yo &#10;&#10;menu de dieta añadir nuevo alimento esta roto" />
+    <MESSAGE value="show data" />
+    <MESSAGE value="menu principal en menu" />
+    <MESSAGE value="dietas unidas o menu, falta borrar dietas, e funcionalidades de Pets" />
+    <MESSAGE value="falta borrar dietas, pets e probar programa sin datos &#10;-en pets añadir gestion de dietas" />
+    <MESSAGE value="falta borrar dietas, pets e probar programa sin datos" />
+    <MESSAGE value="pets e probar programa sin datos" />
+    <MESSAGE value="pets e probar programa sin datos&#10;&#10;añadidos comentarios a PetProgram" />
+    <option name="LAST_COMMIT_MESSAGE" value="pets e probar programa sin datos&#10;&#10;añadidos comentarios a PetProgram" />
   </component>
 </project>

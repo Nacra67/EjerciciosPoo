@@ -27,12 +27,15 @@ public class Menu {
 //        DietProgram program = new DietProgram();
 //        program.showMenuProgram();
 
-       startData();
+         startData();
 
-//        showData(55);
+        showData(55);
+        Pet shrek = petList.get(1);
+        System.out.println(shrek.patientToString());
+        saveInfo.savePet(shrek);
         //starProgram();
 
-        mainMenu();
+        //mainMenu();
 //        Food [] array = new Food[7];
 //        Food comi = new Food(" drfe",1,1,1);
 //        array[1] = comi;

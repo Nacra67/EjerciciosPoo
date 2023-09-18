@@ -23,7 +23,6 @@ public class Pet {
 
     }
 
-
     public Pet(String name, String species, Integer weight, Integer age, Integer ownerID, Integer sex) {
         this.name = name;
         this.species = species;
@@ -62,6 +61,13 @@ public class Pet {
 
 
     }
+
+
+    public String patientToString() {
+        String paciente = name + ";"+ species +";"+ weight+";"+age+";"+ownerID+";"+ sex;
+        return paciente;
+    }
+
     public String getGenre(){
         return  this.animalSex[sex];
     }
